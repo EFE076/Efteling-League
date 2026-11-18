@@ -35,8 +35,8 @@ function activateSelected() {
   if (previousAction === "new-game") {
     openDialog(
       "Nieuw avontuur",
-      "Welkom in de Efteling-regio! De volgende stap is het maken van je trainer en het kiezen van je eerste Pokémon.",
-      "Start binnenkort"
+      "Je avontuur begint in de Efteling-regio. Je eerste uitdaging is Gym 1: Hoogmoed, de Rock-type Gym Leader.",
+      "Naar Gym 1"
     );
   } else if (previousAction === "options") {
     openDialog(
@@ -82,10 +82,7 @@ document.addEventListener("keydown", (event) => {
 dialogClose.addEventListener("click", closeDialog);
 dialogConfirm.addEventListener("click", () => {
   if (previousAction === "new-game") {
-    dialogTitle.textContent = "Wordt vervolgd...";
-    dialogText.textContent = "Het startmenu werkt. Hierna bouwen we het personage- en starterselectiescherm.";
-    dialogConfirm.textContent = "Terug naar menu";
-    previousAction = "message";
+    window.location.href = "gym-1.html";
   } else {
     closeDialog();
   }
