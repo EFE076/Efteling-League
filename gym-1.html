@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17152e">
+  <title>Gym 1 — Hoogmoed | Pokémon Efteling League</title>
+  <link rel="stylesheet" href="gym-1.css">
+</head>
+<body>
+  <main class="gym-game">
+    <header class="topbar">
+      <a class="back-link" href="index.html">← Hoofdmenu</a>
+      <span>POKÉMON · EFTELING LEAGUE</span>
+      <span class="chapter">GYM 01 / 08</span>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">EERSTE GYMLEIDER</p>
+        <h1>Hoogmoed</h1>
+        <p class="subtitle">De trotse meester van steen</p>
+        <div class="type-row"><span class="type-icon">◆</span><span>ROCK-TYPE SPECIALIST</span></div>
+      </div>
+      <div class="portrait" aria-label="Plaats voor de Hoogmoed-afbeelding">
+        <div class="portrait-frame">
+          <span class="portrait-hat">♛</span>
+          <strong>HOOGMOED</strong>
+          <small>TRAINERPORTRET</small>
+          <span class="portrait-note">Afbeelding wordt nog toegevoegd</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel info-panel">
+        <div class="panel-heading"><span>GYM-INFORMATIE</span><span class="panel-index">01</span></div>
+        <div class="difficulty-line">
+          <div><small>MOEILIJKHEID</small><strong>2<span>/10</span></strong></div>
+          <div class="difficulty-meter" aria-label="Moeilijkheid 2 van 10"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <span class="difficulty-label">MAKKELIJK</span>
+        </div>
+        <dl class="facts">
+          <div><dt>Specialiteit</dt><dd><span class="type-pill">Rock</span></dd></div>
+          <div><dt>Gevecht</dt><dd>Single Battle</dd></div>
+          <div><dt>Pokémon</dt><dd>2 Pokémon</dd></div>
+          <div><dt>Levels</dt><dd>12 – 14</dd></div>
+          <div><dt>Battle gimmicks</dt><dd>Geen</dd></div>
+        </dl>
+      </article>
+
+      <article class="panel team-panel">
+        <div class="panel-heading"><span>TEAM VAN HOOGMOED</span><span class="panel-index">02</span></div>
+        <div class="pokemon-card">
+          <div class="mon-art geodude" aria-hidden="true"><span>●</span></div>
+          <div class="mon-info"><small>POKÉMON 01</small><h2>Geodude</h2><p>Rock / Ground · Lv. 12</p><div class="ability">ABILITY <b>Sturdy</b></div></div>
+          <span class="team-number">01</span>
+        </div>
+        <div class="pokemon-card ace-card">
+          <div class="mon-art rockruff" aria-hidden="true"><span>◆</span></div>
+          <div class="mon-info"><small>ACE POKÉMON</small><h2>Rockruff</h2><p>Rock · Lv. 14</p><div class="ability">ABILITY <b>Keen Eye</b></div></div>
+          <span class="ace-tag">ACE</span>
+        </div>
+        <p class="team-note">Hoogmoed begint met Geodude en bewaart zijn Rockruff als laatste Pokémon.</p>
+      </article>
+
+      <article class="panel rewards-panel">
+        <div class="panel-heading"><span>GYM-BELÖNINGEN</span><span class="panel-index">03</span></div>
+        <div class="reward"><div class="reward-icon">✦</div><div><small>BADGE</small><strong>Boulder Badge</strong></div></div>
+        <div class="reward"><div class="reward-icon tm">TM</div><div><small>TECHNICAL MACHINE</small><strong>TM Rock Tomb</strong></div></div>
+      </article>
+
+      <article class="panel challenge-panel">
+        <div class="panel-heading"><span>UITDAGING</span><span class="panel-index">04</span></div>
+        <p>Hoogmoed wacht op je in zijn Gym. Zorg dat je team klaarstaat voordat je de strijd aangaat.</p>
+        <button id="challenge-button" class="challenge-button">Bekijk de uitdaging <span>→</span></button>
+        <p class="small-note">Je Pokémon-team en het turn-based gevecht worden in de volgende spelstap gekoppeld.</p>
+      </article>
+    </section>
+
+    <section class="dialog hidden" id="intro-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+      <div class="dialog-card">
+        <p class="eyebrow">GYM LEIDER · HOOGMOED</p>
+        <h2 id="dialog-title">“Een rotsvaste wil is onmisbaar.”</h2>
+        <p>“Welkom in mijn Gym. Veel trainers denken dat ze sterk genoeg zijn, maar steen wijkt niet zomaar. Laat maar zien wat je kunt.”</p>
+        <button id="dialog-close" class="challenge-button">Begrepen</button>
+      </div>
+    </section>
+    <footer>POKÉMON EFTELING LEAGUE <span>·</span> GYM 1: HOOGMOED</footer>
+  </main>
+  <script src="gym-1.js"></script>
+</body>
+</html>
