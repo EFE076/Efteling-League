@@ -1,75 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;600;700;800&display=swap');
-
-:root {
-  --line: #e9d9b6;
-  --gold: #ffd77c;
-  --white: #fff8e9;
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 20px;
-  color: var(--white); background: radial-gradient(ellipse at center, #34305e 0%, #111126 72%);
-  font-family: Roboto, Arial, sans-serif;
-}
-.game-shell {
-  width: min(1180px, 100%); aspect-ratio: 16 / 9; min-height: 560px; position: relative;
-  overflow: hidden; border: 4px solid #d7c39c; border-radius: 8px;
-  background: #171638 url("assets/title-screen.svg") center / cover no-repeat;
-  box-shadow: 0 22px 70px rgba(0,0,0,.55), 0 0 0 7px #30284a;
-}
-.title-screen {
-  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
-  justify-content: space-between; padding: clamp(24px, 5vw, 58px) 18px 22px;
-}
-.shade {
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(9,10,35,.28), transparent 42%, rgba(8,8,28,.30));
-  pointer-events: none;
-}
-.game-heading, .main-menu, .controls-hint, .version { position: relative; z-index: 1; }
-.game-heading { text-align: center; text-shadow: 3px 4px 0 #17152e, 0 2px 15px #09091d; }
-.eyebrow { margin: 0 0 13px; color: #f9d995; font: 10px 'Press Start 2P', monospace; letter-spacing: 2px; }
-h1 {
-  margin: 0; color: #ffdc78; font: clamp(22px, 4vw, 48px) 'Press Start 2P', monospace;
-  line-height: 1.55; -webkit-text-stroke: 1px #5c3b55;
-}
-h1 span { display: block; color: #fff0d2; font-size: .55em; letter-spacing: 1px; }
-.tagline { margin: 12px 0 0; color: #fff2d9; font-weight: 700; letter-spacing: 1px; }
-.main-menu {
-  width: min(360px, 90%); display: grid; gap: 8px; padding: 13px;
-  border: 3px solid var(--line); border-radius: 5px; background: rgba(18,17,43,.92);
-  box-shadow: 0 6px 0 rgba(0,0,0,.35), inset 0 0 0 2px rgba(255,255,255,.08);
-}
-.menu-option {
-  min-height: 54px; position: relative; display: flex; align-items: center; gap: 13px;
-  padding: 10px 14px; border: 2px solid transparent; border-radius: 3px;
-  color: var(--white); background: transparent; text-align: left;
-  font: 700 19px Roboto, sans-serif; cursor: pointer;
-}
-.menu-option .pointer { width: 17px; color: var(--gold); opacity: 0; font-size: 14px; }
-.menu-option.selected {
-  border-color: #f4dcae; background: linear-gradient(90deg, rgba(255,215,124,.19), rgba(255,255,255,.04));
-  color: var(--gold);
-}
-.menu-option.selected .pointer { opacity: 1; }
-.menu-option:disabled { opacity: .42; cursor: not-allowed; }
-.menu-option small { margin-left: auto; font-size: 10px; font-weight: 400; color: #d5c9d8; }
-.menu-option:focus-visible, .dialog-button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
-.controls-hint { margin: 0; font: 9px 'Press Start 2P', monospace; color: #fff2d9; text-shadow: 2px 2px #17152e; }
-.controls-hint span { color: var(--gold); padding: 0 8px; }
-.version { position: absolute; right: 16px; bottom: 12px; margin: 0; font: 7px 'Press Start 2P', monospace; color: rgba(255,255,255,.75); }
-.dialog { position: absolute; z-index: 5; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(8,8,25,.68); }
-.dialog.hidden { display: none; }
-.dialog-card { width: min(460px,100%); padding: 26px; border: 3px solid var(--line); border-radius: 5px; background: #1a193b; box-shadow: 0 8px 0 #09091d; }
-.dialog-card h2 { margin: 0 0 15px; color: var(--gold); font: 14px 'Press Start 2P', monospace; line-height: 1.7; }
-.dialog-card p { line-height: 1.6; color: #f7edda; }
-.dialog-actions { display: flex; gap: 10px; margin-top: 22px; }
-.dialog-button { padding: 12px 16px; border: 2px solid #cdbb9b; border-radius: 3px; color: white; background: #343052; font-weight: 700; cursor: pointer; }
-.dialog-button.primary { color: #241d32; background: var(--gold); }
-@media (max-width: 650px) {
-  .game-shell { aspect-ratio: auto; min-height: 620px; }
-  .title-screen { padding-top: 36px; }
-  .main-menu { margin-bottom: 34px; }
-  .controls-hint { font-size: 7px; }
-  .version { font-size: 6px; }
-}
+:root{--cream:#f7f0df;--gold:#e9c77d;--ink:#151729;--panel:#20243a;--edge:#9b927e}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:18px;background:#111321;color:var(--cream);font-family:Roboto,Arial,sans-serif}
+.game-shell{width:min(1120px,100%);aspect-ratio:16/9;min-height:560px;position:relative;overflow:hidden;border:4px solid var(--edge);background:#242942 url("assets/title-screen.svg") center/cover no-repeat;box-shadow:0 0 0 4px #292b3d,0 18px 45px #0009}
+.title-screen{position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;padding:30px 34px 20px;background:linear-gradient(90deg,rgba(13,17,31,.92) 0%,rgba(13,17,31,.82) 43%,rgba(13,17,31,.15) 100%)}
+.shade{display:none}
+.game-heading,.main-menu,.controls-hint,.version{position:relative;z-index:1}
+.game-heading{text-align:left;text-shadow:2px 2px #111}
+.eyebrow{margin:0 0 12px;color:#d8c18d;font:8px 'Press Start 2P',monospace;letter-spacing:1px}
+h1{margin:0;color:#f1d58e;font:clamp(19px,3vw,34px) 'Press Start 2P',monospace;line-height:1.65}
+h1 span{display:block;color:#f8f1df;font-size:.58em;letter-spacing:0}
+.tagline{margin:8px 0 0;color:#d0cbd0;font-size:13px}
+.main-menu{width:min(330px,90%);display:grid;gap:5px;padding:10px;border:2px solid #aaa18e;background:rgba(23,27,44,.97);box-shadow:4px 4px 0 #101321}
+.menu-option{min-height:47px;position:relative;display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid transparent;border-radius:0;color:#eee8d9;background:#292e47;text-align:left;font:700 15px Roboto,sans-serif;cursor:pointer}
+.menu-option .pointer{width:13px;color:var(--gold);opacity:0;font-size:12px}
+.menu-option.selected{border-color:#e5cb8e;background:#3b4058;color:#ffe4a7}
+.menu-option.selected .pointer{opacity:1}
+.menu-option:disabled{opacity:.42;cursor:not-allowed}
+.menu-option small{margin-left:auto;font-size:9px;font-weight:400;color:#b7b4bd}
+.menu-option:focus-visible,.dialog-button:focus-visible{outline:2px solid white;outline-offset:2px}
+.controls-hint{margin:0;color:#e4dfd3;font:7px 'Press Start 2P',monospace;text-shadow:2px 2px #111}
+.controls-hint span{color:var(--gold);padding:0 6px}
+.version{position:absolute;right:13px;bottom:10px;margin:0;color:#d3ccbc;font:6px 'Press Start 2P',monospace}
+.dialog{position:absolute;z-index:5;inset:0;display:grid;place-items:center;padding:20px;background:rgba(8,10,20,.78)}
+.dialog.hidden{display:none}
+.dialog-card{width:min(430px,100%);padding:22px;border:3px solid #b5a985;border-radius:0;background:#20243a;box-shadow:5px 5px 0 #0b0e19}
+.dialog-card h2{margin:0 0 15px;color:var(--gold);font:12px 'Press Start 2P',monospace;line-height:1.8}
+.dialog-card p{line-height:1.6;color:#e8e2d5;font-size:14px}
+.dialog-actions{display:flex;gap:8px;margin-top:20px}
+.dialog-button{padding:11px 14px;border:2px solid #817c72;border-radius:0;color:#f5f0e5;background:#343a52;font-weight:700;cursor:pointer}
+.dialog-button.primary{color:#201e29;background:#e6ca86;border-color:#f3e3bd}
+@media(max-width:650px){body{padding:0}.game-shell{aspect-ratio:auto;min-height:100vh;border-width:0;background-position:58% center}.title-screen{padding:26px 18px 22px;background:linear-gradient(90deg,rgba(13,17,31,.94),rgba(13,17,31,.66))}.main-menu{margin-top:auto;margin-bottom:30px}.controls-hint{font-size:6px}.version{font-size:5px}}
