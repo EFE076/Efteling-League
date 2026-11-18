@@ -51,3 +51,24 @@ h1 span{color:var(--gold)}
 footer{padding:15px;text-align:center;border-top:2px solid #514c67;color:#918ba0;font:7px 'Press Start 2P',monospace}
 footer span{color:var(--gold)}
 @media(max-width:700px){body{padding:0}.game{min-height:100vh;border-width:0}.intro-screen{grid-template-columns:1fr;text-align:center;padding:25px 18px}.intro-copy>p:not(.eyebrow){margin-inline:auto}.intro-stats{justify-content:center}.trainer-art{width:220px}.trainer-art img{height:205px}.battlefield{height:340px}.opponent-status,.player-status{width:190px;padding:9px}.opponent-status{left:10px;top:10px}.player-status{right:10px;bottom:10px}.enemy-sprite,.player-sprite{width:130px;height:130px}.enemy-sprite{right:4%;top:85px}.player-sprite{left:3%;bottom:35px}.trainer-battle-art{width:75px;height:110px}.battle-actions{grid-template-columns:1fr}.action-side{grid-template-columns:1fr auto;align-items:center}.scene{padding:10px}.move-button{font-size:7px;padding:12px 7px}}
+
+/* Gym 1 scene updates */
+.intro-screen{
+  background:
+    linear-gradient(90deg,rgba(15,13,26,.91),rgba(18,16,31,.48)),
+    url("hooghmoed-la-nouvelle-attraction-du-parc-efteling-ouvrira-le-1er-mai-2026.webp") center/cover no-repeat;
+  position:relative;
+}
+.intro-screen:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(13,12,24,.55),transparent 45%)}
+.intro-copy,.trainer-art{position:relative;z-index:1}
+.cutscene{position:fixed;inset:0;z-index:20;display:grid;place-items:end center;padding:24px;background:rgba(8,7,17,.78)}
+.cutscene-content{position:relative;display:flex;align-items:flex-end;gap:22px;width:min(900px,100%);z-index:1}
+.cutscene-content>img{width:230px;height:300px;object-fit:contain;object-position:bottom;image-rendering:pixelated;filter:drop-shadow(0 8px 8px #0009)}
+.dialogue-panel{flex:1;min-height:155px;padding:18px 20px;background:#f7f0d9;color:#29263a;border:4px solid #4e4960;box-shadow:0 0 0 4px #d5c49a,7px 7px 0 #0008;position:relative}
+.dialogue-panel strong{font:9px 'Press Start 2P',monospace;color:#6b4d35}
+.dialogue-panel p{font-size:17px;line-height:1.55;min-height:48px;margin:14px 0}
+.dialogue-panel .pixel-button{float:right;padding:12px;font-size:8px}
+.pokeball-transition{position:fixed;inset:0;z-index:30;background:#11101e;display:grid;place-items:center}
+.pokeball-transition img{width:88px;height:88px;object-fit:contain;image-rendering:pixelated;animation:ball-pulse .65s ease-in-out infinite alternate}
+@keyframes ball-pulse{from{transform:scale(.8) rotate(-12deg)}to{transform:scale(1.15) rotate(12deg)}}
+@media(max-width:600px){.cutscene{padding:12px}.cutscene-content{gap:8px}.cutscene-content>img{width:115px;height:190px}.dialogue-panel{padding:12px;min-height:140px}.dialogue-panel p{font-size:14px}.dialogue-panel strong{font-size:7px}}
