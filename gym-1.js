@@ -36,10 +36,6 @@ function loadEnemy(){
   enemySprite.src = enemy.image;
   enemySprite.alt = enemy.name;
   document.querySelector("#battle-step").textContent = "GEVECHT " + (enemyIndex + 1) + " / 2";
-  moveGrid.querySelectorAll("button").forEach((button,index) => {
-    button.textContent = enemy.moves[index].toUpperCase();
-    button.dataset.move = enemy.moves[index];
-  });
   updateBars();
 }
 function endBattle(won){
