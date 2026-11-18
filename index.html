@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11112d">
+  <title>Pokémon: Efteling League</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell" aria-label="Pokémon Efteling League startmenu">
+    <div class="title-screen">
+      <div class="shade"></div>
+      <header class="game-heading">
+        <p class="eyebrow">WELCOME TO THE</p>
+        <h1>Pokémon <span>Efteling League</span></h1>
+        <p class="tagline">Een magisch Pokémon-avontuur</p>
+      </header>
+      <nav class="main-menu" aria-label="Hoofdmenu">
+        <button class="menu-option selected" data-action="new-game">
+          <span class="pointer" aria-hidden="true">▶</span> New Game
+        </button>
+        <button class="menu-option" data-action="continue" disabled>
+          <span class="pointer" aria-hidden="true">▶</span> Continue
+          <small>Geen save gevonden</small>
+        </button>
+        <button class="menu-option" data-action="options">
+          <span class="pointer" aria-hidden="true">▶</span> Options
+        </button>
+      </nav>
+      <p class="controls-hint">↑ ↓ Kiezen <span>•</span> ENTER Bevestigen</p>
+      <p class="version">FAN-MADE PROJECT · VERSIE 0.1</p>
+    </div>
+    <section class="dialog hidden" id="dialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+      <div class="dialog-card">
+        <h2 id="dialogTitle">Nieuw avontuur</h2>
+        <p id="dialogText">Welkom in de Efteling-regio! Je avontuur begint binnenkort.</p>
+        <div class="dialog-actions">
+          <button class="dialog-button primary" id="dialogConfirm">Verder</button>
+          <button class="dialog-button" id="dialogClose">Terug</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
