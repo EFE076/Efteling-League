@@ -1,30 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;500;700;800&display=swap');
-:root{--ink:#17152e;--panel:#24213f;--panel2:#302b4e;--gold:#f4d58d;--cream:#fff5df;--muted:#c4bad0;--line:#5b5272;--rock:#b58b69}
+:root{--bg:#17172c;--panel:#292943;--panel2:#353550;--line:#77738a;--gold:#f5d68e;--cream:#fff5df;--muted:#c3bfd0;--green:#83c77c}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;padding:22px;color:var(--cream);background:radial-gradient(ellipse at 50% 0,#40365e 0,#1a1833 54%,#101020 100%);font-family:Roboto,Arial,sans-serif}
-.gym-game{width:min(1120px,100%);margin:0 auto}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 2px 18px;color:var(--muted);font:9px 'Press Start 2P',monospace}
-.back-link{color:var(--gold);text-decoration:none;font:700 13px Roboto,sans-serif}.back-link:hover{text-decoration:underline}
-.chapter{color:var(--gold)}
-.hero{position:relative;display:flex;justify-content:space-between;align-items:center;min-height:270px;padding:38px 48px;overflow:hidden;border:2px solid #b59b78;border-radius:8px;background:linear-gradient(110deg,rgba(21,20,42,.96),rgba(48,42,71,.88)),repeating-linear-gradient(135deg,#51455c 0 12px,#423a55 12px 24px);box-shadow:0 12px 35px #08081780}
-.hero:after{content:"";position:absolute;inset:auto -30px -90px auto;width:330px;height:230px;border-radius:50%;background:#b58b6922;filter:blur(12px)}
-.eyebrow{color:var(--gold);font:9px 'Press Start 2P',monospace;letter-spacing:1px}
-.hero h1{margin:17px 0 7px;color:#ffe4a8;font:clamp(27px,5vw,48px) 'Press Start 2P',monospace;line-height:1.45;text-shadow:4px 4px #342744}
-.subtitle{margin:0;color:#eee0cf;font-size:18px}.type-row{display:flex;align-items:center;gap:9px;margin-top:25px;color:#e5c49e;font:10px 'Press Start 2P',monospace}.type-icon{font-size:20px}
-.portrait{position:relative;z-index:1;width:190px;height:210px;flex:0 0 190px;padding:8px;border:2px solid #b9a17e;background:#1a1831;box-shadow:6px 6px 0 #0e0d20}
-.portrait-frame{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;background:linear-gradient(160deg,#51415a,#25223f);border:1px dashed #9e8b79}
-.portrait-hat{font-size:48px;color:var(--gold)}.portrait-frame strong{font:12px 'Press Start 2P',monospace;color:#ffe5b4}.portrait-frame small{font:8px 'Press Start 2P',monospace;color:#cfc1b0}.portrait-note{font-size:10px;color:#c6b8ad}
-.content-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:16px;margin-top:18px}
-.panel{padding:22px;border:1px solid var(--line);border-radius:7px;background:linear-gradient(145deg,#292541,#1e1c36);box-shadow:0 7px 18px #08081755}
-.panel-heading{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--line);color:var(--gold);font:10px 'Press Start 2P',monospace}.panel-index{color:#8e829e}
-.difficulty-line{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;align-items:center;padding:19px 0 14px}.difficulty-line small,.mon-info small,.reward small{display:block;color:var(--muted);font:8px 'Press Start 2P',monospace}.difficulty-line strong{display:block;margin-top:7px;color:#f5d797;font:29px 'Press Start 2P',monospace}.difficulty-line strong span{font-size:13px;color:#bdb1c5}
-.difficulty-meter{display:flex;gap:4px;align-items:center}.difficulty-meter i{height:10px;flex:1;border-radius:2px;background:#514b64}.difficulty-meter i:nth-child(-n+2){background:#d2aa76}.difficulty-label{grid-column:2;color:#d9c1a2;font:8px 'Press Start 2P',monospace}
-.facts{margin:0}.facts div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #ffffff12;font-size:13px}.facts dt{color:var(--muted)}.facts dd{margin:0;text-align:right;font-weight:700}.type-pill{padding:4px 10px;border-radius:3px;background:#8d6b52;color:white;font-size:11px}
-.pokemon-card{position:relative;display:flex;align-items:center;gap:15px;padding:15px 0;border-bottom:1px solid #ffffff18}.mon-art{width:78px;height:78px;display:grid;place-items:center;flex:0 0 78px;border:2px solid #74637c;border-radius:6px;background:radial-gradient(circle,#65566d,#27243f 70%);color:#f3d7aa;font-size:43px;text-shadow:3px 3px #30213b}.rockruff{background:radial-gradient(circle,#79604b,#28233f 70%);color:#f1c58f}
-.mon-info h2{margin:7px 0 5px;color:#fff0d5;font-size:20px}.mon-info p{margin:0 0 9px;color:#c5b8c8;font-size:12px}.ability{color:#a99eb6;font-size:10px}.ability b{color:#f0d8a9;margin-left:5px}.team-number{margin-left:auto;color:#867c94;font:10px 'Press Start 2P',monospace}.ace-tag{position:absolute;right:0;top:13px;padding:5px 7px;background:#8d563f;color:#fff0d5;font:8px 'Press Start 2P',monospace}.ace-card{border-bottom:0}.ace-card .mon-info{padding-right:35px}.team-note{margin:8px 0 0;color:#bfb3c6;font-size:12px;line-height:1.5}
-.reward{display:flex;align-items:center;gap:15px;padding:18px 0}.reward+.reward{border-top:1px solid #ffffff18}.reward-icon{width:48px;height:48px;display:grid;place-items:center;border:1px solid #b79a71;border-radius:6px;color:#f8d994;background:#4a3e50;font-size:25px}.reward-icon.tm{font:13px 'Press Start 2P',monospace}.reward strong{display:block;margin-top:8px;font-size:15px}
-.challenge-panel p{color:#d0c5d3;font-size:14px;line-height:1.6}.challenge-button{display:flex;justify-content:space-between;align-items:center;width:100%;padding:15px 17px;border:2px solid #e8cb91;border-radius:4px;background:linear-gradient(180deg,#f4d99d,#d9b875);color:#2a2138;font-weight:800;cursor:pointer}.challenge-button:hover{filter:brightness(1.08)}.challenge-button span{font-size:20px}.small-note{font-size:11px!important;color:#a99fb2!important}
-footer{padding:25px 0 4px;text-align:center;color:#8f849f;font:8px 'Press Start 2P',monospace}footer span{color:var(--gold)}
-.dialog{position:fixed;inset:0;z-index:5;display:grid;place-items:center;padding:20px;background:#080817c9}.dialog.hidden{display:none}.dialog-card{width:min(480px,100%);padding:28px;border:2px solid #c3a67d;border-radius:7px;background:#24213f;box-shadow:0 10px 0 #0b0a19}.dialog-card h2{color:#f5d99f;font:15px 'Press Start 2P',monospace;line-height:1.7}.dialog-card p:not(.eyebrow){color:#e3d8e3;line-height:1.7}.dialog-card .challenge-button{margin-top:22px}
-@media(max-width:760px){body{padding:12px}.topbar{font-size:7px}.hero{padding:25px;min-height:230px}.portrait{width:130px;height:155px;flex-basis:130px}.portrait-hat{font-size:35px}.portrait-frame strong{font-size:8px}.portrait-note{font-size:8px}.content-grid{grid-template-columns:1fr}.panel{padding:18px}}
-@media(max-width:480px){.hero{align-items:flex-start;padding:22px 16px}.portrait{width:92px;height:120px;flex-basis:92px;padding:4px}.portrait-hat{font-size:25px}.portrait-frame{gap:7px}.portrait-frame strong{font-size:6px}.portrait-frame small{font-size:6px}.portrait-note{font-size:7px}.hero h1{font-size:21px}.subtitle{font-size:14px}.type-row{font-size:7px}.topbar span:nth-child(2){display:none}}
+body{margin:0;min-height:100vh;padding:18px;background:#10101e;color:var(--cream);font-family:Roboto,Arial,sans-serif}
+.game{width:min(1050px,100%);margin:auto;background:var(--bg);border:4px solid #b9a887;box-shadow:0 0 0 5px #29243c,0 20px 60px #0009;min-height:calc(100vh - 36px);display:flex;flex-direction:column}
+.topbar{height:48px;padding:0 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #514c67;background:#222139;color:#bcb5c7;font:8px 'Press Start 2P',monospace}
+.topbar a{color:var(--gold);text-decoration:none}
+.intro-screen{flex:1;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:24px;padding:clamp(24px,5vw,58px);background:linear-gradient(180deg,#252440,#17172c 70%)}
+.eyebrow{font:9px 'Press Start 2P',monospace;color:var(--gold);line-height:1.8}
+h1{font:clamp(25px,4vw,42px) 'Press Start 2P',monospace;line-height:1.65;margin:22px 0;color:#fff0d0}
+h1 span{color:var(--gold)}
+.intro-copy>p:not(.eyebrow){max-width:460px;color:#d2ccda;line-height:1.7}
+.intro-stats{display:flex;flex-wrap:wrap;gap:10px;margin:25px 0 30px}
+.intro-stats span{padding:11px;border:1px solid #59546d;background:#201f37;color:#aaa5b9;font:7px 'Press Start 2P',monospace;line-height:2}
+.intro-stats b{display:block;color:#f6dfb0;font-size:9px}
+.trainer-art{margin:0;justify-self:center;width:min(100%,330px);padding:9px;background:#25233e;border:3px solid #b9a887;box-shadow:7px 7px 0 #0d0d19}
+.trainer-art img{display:block;width:100%;height:320px;object-fit:contain;background:#38334c;image-rendering:pixelated}
+.trainer-art figcaption{text-align:center;padding:12px 4px 4px;color:var(--gold);font:8px 'Press Start 2P',monospace}
+.pixel-button{display:inline-flex;align-items:center;justify-content:center;padding:16px 19px;border:2px solid #fff0c7;background:#e5c985;color:#211d30;text-decoration:none;font:9px 'Press Start 2P',monospace;cursor:pointer;box-shadow:0 4px 0 #8b7048}
+.pixel-button:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.hidden{display:none!important}
+.scene{padding:18px;flex:1;display:flex;flex-direction:column}
+.scene-heading{display:flex;justify-content:space-between;padding:10px 12px;color:var(--gold);font:8px 'Press Start 2P',monospace}
+.battlefield{height:390px;position:relative;overflow:hidden;border:3px solid #77718a;background:linear-gradient(#b8c5a2 0 47%,#84966f 47% 49%,#c5b58d 49% 100%);image-rendering:pixelated}
+.battlefield:before{content:"";position:absolute;left:-5%;right:-5%;top:43%;height:95px;background:radial-gradient(ellipse,#73835e 0 35%,transparent 36%);opacity:.9}
+.battlefield:after{content:"";position:absolute;left:-10%;right:-10%;bottom:-75px;height:190px;border-radius:50%;background:#a89a79}
+.opponent-status,.player-status{position:absolute;z-index:2;width:245px;padding:12px 14px;background:#f5f0dc;border:2px solid #55536a;color:#28263b;box-shadow:3px 3px #5a5261}
+.opponent-status{top:22px;left:22px}.player-status{right:22px;bottom:20px}
+.status-top{display:flex;justify-content:space-between;gap:8px;font-size:14px}.status-top span{font-size:12px}
+.hp-track{height:9px;margin:9px 0 5px;border:1px solid #4c4b50;background:#777}.hp-track i{display:block;width:100%;height:100%;background:#73b968;transition:width .25s}
+.opponent-status small,.player-status small{font-size:10px;color:#555}
+.enemy-sprite,.player-sprite{position:absolute;z-index:1;width:170px;height:170px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(2px 5px 1px #45463c66)}
+.enemy-sprite{right:16%;top:62px}.player-sprite{left:16%;bottom:18px}
+.trainer-battle-art{position:absolute;right:12px;bottom:4px;width:110px;height:150px;opacity:.85}
+.trainer-battle-art img{width:100%;height:100%;object-fit:contain;object-position:bottom;image-rendering:pixelated}
+.battle-bottom{margin-top:14px;border:3px solid #c4bda8;background:#25243e;padding:14px}
+.battle-message{min-height:40px;padding:7px 4px;color:#fff2d9;font-size:15px;line-height:1.5}
+.battle-actions{display:grid;grid-template-columns:1fr 190px;gap:14px;align-items:center}
+.move-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.move-button{padding:13px 9px;text-align:left;background:#383650;border:2px solid #77718a;color:#fff2d9;font:9px 'Press Start 2P',monospace;cursor:pointer}
+.move-button:hover{background:#4b4668;border-color:var(--gold)}
+.action-side{display:grid;gap:12px;color:var(--gold);font:8px 'Press Start 2P',monospace;text-align:center}
+.action-side .pixel-button{font-size:8px}
+.result-screen{flex:1;min-height:520px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:35px;background:radial-gradient(ellipse,#34304e,#17172c 70%)}
+.result-screen h2{font:clamp(18px,3vw,28px) 'Press Start 2P',monospace;color:var(--gold);line-height:1.8}
+.result-screen>p:not(.eyebrow){color:#d5cede}
+.reward-row{display:flex;align-items:center;gap:18px;width:min(320px,100%);padding:14px;margin:8px;border:2px solid #71677c;background:#24223d;text-align:left}
+.reward-row>span{font:20px 'Press Start 2P',monospace;color:var(--gold);width:38px;text-align:center}
+.reward-row small{display:block;color:#aaa2b7;font:7px 'Press Start 2P',monospace;margin-bottom:8px}
+.reward-row b{font-size:14px}.link-button{margin-top:22px}
+footer{padding:15px;text-align:center;border-top:2px solid #514c67;color:#918ba0;font:7px 'Press Start 2P',monospace}
+footer span{color:var(--gold)}
+@media(max-width:700px){body{padding:0}.game{min-height:100vh;border-width:0}.intro-screen{grid-template-columns:1fr;text-align:center;padding:25px 18px}.intro-copy>p:not(.eyebrow){margin-inline:auto}.intro-stats{justify-content:center}.trainer-art{width:220px}.trainer-art img{height:205px}.battlefield{height:340px}.opponent-status,.player-status{width:190px;padding:9px}.opponent-status{left:10px;top:10px}.player-status{right:10px;bottom:10px}.enemy-sprite,.player-sprite{width:130px;height:130px}.enemy-sprite{right:4%;top:85px}.player-sprite{left:3%;bottom:35px}.trainer-battle-art{width:75px;height:110px}.battle-actions{grid-template-columns:1fr}.action-side{grid-template-columns:1fr auto;align-items:center}.scene{padding:10px}.move-button{font-size:7px;padding:12px 7px}}
