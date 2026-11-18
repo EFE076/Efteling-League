@@ -4,14 +4,21 @@ const result = document.querySelector("#result-screen");
 const message = document.querySelector("#battle-message");
 const nextButton = document.querySelector("#next-turn");
 const turnLabel = document.querySelector("#turn-label");
+const cutscene = document.querySelector("#cutscene");
+const dialogueSpeaker = document.querySelector("#dialogue-speaker");
+const dialogueText = document.querySelector("#dialogue-text");
+const dialogueNext = document.querySelector("#dialogue-next");
+const transition = document.querySelector("#pokeball-transition");
 
 const enemies = [
-  {name:"Geodude",level:12,hp:42,maxHp:42,image:"74.webp",moves:["Rock Throw","Tackle","Defense Curl","Rock Polish"]},
-  {name:"Rockruff",level:14,hp:48,maxHp:48,image:"744.png",moves:["Rock Throw","Tackle","Leer","Sand Attack"]}
+  {name:"Geodude",level:12,hp:42,maxHp:42,image:"74.webp"},
+  {name:"Rockruff",level:14,hp:48,maxHp:48,image:"744.png"}
 ];
-const player = {name:"Bulbasaur",level:12,hp:48,maxHp:48,image:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"};
+const player = {name:"Bulbasaur",level:12,hp:48,maxHp:48};
 let enemyIndex = 0;
-let playerTurn = true;
+let playerTurn = false;
+let dialogueQueue = [];
+let dialogueDone = null;
 
 const enemyName = document.querySelector("#enemy-name");
 const enemyLevel = document.querySelector("#enemy-level");
@@ -21,6 +28,26 @@ const enemySprite = document.querySelector("#enemy-sprite");
 const playerHp = document.querySelector("#player-hp");
 const playerHpText = document.querySelector("#player-hp-text");
 const moveGrid = document.querySelector("#move-grid");
+
+function playDialogue(lines, after){
+  dialogueQueue = lines;
+  dialogueDone = after || null;
+  showNextDialogue();
+  cutscene.classList.remove("hidden");
+}
+function showNextDialogue(){
+  if(dialogueQueue.length === 0){
+    cutscene.classList.add("hidden");
+    const callback = dialogueDone;
+    dialogueDone = null;
+    if(callback) callback();
+    return;
+  }
+  const line = dialogueQueue.shift();
+  dialogueSpeaker.textContent = line.speaker || "HOOGMOED";
+  dialogueText.textContent = line.text;
+}
+dialogueNext.addEventListener("click", showNextDialogue);
 
 function updateBars(){
   const enemy = enemies[enemyIndex];
@@ -38,20 +65,33 @@ function loadEnemy(){
   document.querySelector("#battle-step").textContent = "GEVECHT " + (enemyIndex + 1) + " / 2";
   updateBars();
 }
+function beginGeodudeBattle(){
+  loadEnemy();
+  playDialogue([
+    {text:"Dus jij bent de uitdager? Ik ben Hoogmoed. Laat maar zien of je tegen een rotsvaste verdediging kunt."},
+    {text:"Geodude, laat deze trainer zien wat echte standvastigheid betekent!"}
+  ], () => {
+    message.textContent = "Hoogmoed stuurde Geodude naar voren! Wat doe je?";
+    playerTurn = true;
+  });
+}
 function endBattle(won){
   battle.classList.add("hidden");
   result.classList.remove("hidden");
   document.querySelector("#result-title").textContent = won ? "JE HEBT GEWONNEN!" : "GEVECHT VERLOREN";
   document.querySelector("#result-text").textContent = won
-    ? "Hoogmoed knikt. “Je hebt bewezen dat je sterker bent dan ik dacht. Deze badge is van jou.”"
+    ? "Hoogmoed: “Je hebt mijn team verslagen. Je hebt deze Boulder Badge verdiend.”"
     : "Hoogmoed: “Kom terug wanneer je team er klaar voor is.”";
   document.querySelectorAll(".reward-row").forEach(row => row.style.display = won ? "flex" : "none");
 }
 document.querySelector("#enter-gym").addEventListener("click", () => {
   intro.classList.add("hidden");
-  battle.classList.remove("hidden");
-  loadEnemy();
-  message.textContent = "Hoogmoed: “Geodude, laat zien hoe sterk steen kan zijn!”";
+  transition.classList.remove("hidden");
+  setTimeout(() => {
+    transition.classList.add("hidden");
+    battle.classList.remove("hidden");
+    beginGeodudeBattle();
+  }, 850);
 });
 moveGrid.addEventListener("click", event => {
   const button = event.target.closest("button");
@@ -66,9 +106,14 @@ moveGrid.addEventListener("click", event => {
   moveGrid.querySelectorAll("button").forEach(item => item.disabled = true);
   if(enemy.hp <= 0){
     if(enemyIndex === 0){
-      message.textContent += " Geodude is verslagen! Hoogmoed stuurt zijn Rockruff naar voren.";
-      nextButton.classList.remove("hidden");
-      turnLabel.textContent = "NIEUWE TEGENSTANDER";
+      message.textContent = "Geodude is verslagen!";
+      playDialogue([
+        {text:"Niet slecht… maar denk niet dat je er al bent. Mijn sterkste Pokémon staat nog klaar."},
+        {text:"Kom tevoorschijn, Rockruff! Laat zien waarom jij mijn trots bent!"}
+      ], () => {
+        nextButton.classList.remove("hidden");
+        turnLabel.textContent = "NIEUWE TEGENSTANDER";
+      });
     } else {
       endBattle(true);
     }
